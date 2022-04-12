@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>zendeskデータ</title>
+  <link href="/css/zendesk.css" th:href="@{/css/zendesk.css}" rel="stylesheet"></link>
+  <script src="/js/zendesk.js" th:src="@{/js/zendesk.js}"></script>
+</head>
+<body>
+  <table>
+	<tr>
+		<th>チケットID</th>
+		<th>タイプ</th>
+		<th>タイトル</th>
+		<th>内容</th>
+		<th>優先度</th>
+		<th>ステータス</th>
+		<th>製品</th>
+		<th>バージョン</th>
+		<th>コンポーネント</th>
+		<th>評価レベル</th>
+		<th>評価コメント</th>
+		<th>チケット作成日</th>
+		<th>チケット更新日</th>
+		<th>組織名</th>
+		<th>顧客名</th>
+		<th>メールアドレス</th>
+		<th>担当者名</th>
+		<th>担当者グループ</th>
+		<th>担当者ロール</th>
+		<th>顧客ステータス</th>
+		<th>顧客作成日</th>
+		<th>組織作成日</th>
+		<th>顧客更新日</th>
+		<th>組織更新日</th>
+		<th>解決日数</th>
+		<th>顧客最終ログイン</th>
+		<th>担当者最終ログイン</th>
+		
+	</tr>
+	<tr th:each="obj : ${dwhTicketDataList}">
+		<td th:text="${obj.ticket_id}"></td>
+		<td th:text="${obj.type}"></td>
+ 		<td th:text="${obj.subject}"></td>
+		<td th:text="${obj.description}"></td>
+		<td th:text="${obj.priority}"></td>
+		<td th:text="${obj.status}"></td>
+<!-- 		<td th:text="${obj.products}"></td> -->
+		<td th:text="${obj.products_1}"></td>
+		<td th:text="${obj.products_2}"></td>
+		<td th:text="${obj.products_3}"></td>
+		<td th:text="${obj.satisfaction}"></td>
+		<td th:text="${obj.comment}"></td>
+		<td th:text="${obj.created_date}"></td>
+		<td th:text="${obj.updated_date}"></td>
+		<td th:text="${obj.sosiki_name}"></td>
+		<td th:text="${obj.user_name}"></td>
+		<td th:text="${obj.email}"></td>
+		<td th:text="${obj.syain_name}"></td>
+		<td th:text="${obj.syain_group_name}"></td>
+		<td th:text="${obj.syain_role}"></td>
+		<td th:text="${obj.user_status}"></td>
+		<td th:text="${obj.user_created_date}"></td>
+		<td th:text="${obj.sosiki_created_date}"></td>
+		<td th:text="${obj.user_updated_date}"></td>
+		<td th:text="${obj.sosiki_updated_date}"></td>
+		<td th:text="${obj.open_duration_days}"></td>
+		<td th:text="${obj.user_last_login_date}"></td>
+		<td th:text="${obj.syain_last_login_date}"></td>
+	</tr>
+  </table>
+</body>
+</html>
